@@ -1,0 +1,179 @@
+[
+  {
+    "question": "¿Cuál de los siguientes patrones de diseño se utiliza para convertir una interfaz en otra que un cliente espera?",
+    "options": ["Adapter", "Decorator", "Facade", "Proxy"],
+    "answer": "Adapter",
+    "example": "Usamos un Adapter cuando tenemos una clase con una interfaz incompatible con la que queremos trabajar, como adaptar una API de pago externa para integrarla en nuestra aplicación."
+  },
+  {
+    "question": "¿Cuál de los siguientes patrones se utiliza para separar una abstracción de su implementación?",
+    "options": ["Adapter", "Bridge", "Composite", "Facade"],
+    "answer": "Bridge",
+    "example": "Un ejemplo de uso del patrón Bridge es cuando queremos que una clase abstracta de 'forma' pueda ser implementada por varias clases concretas de 'círculo', 'cuadrado', etc."
+  },
+  {
+    "question": "¿Cuál de los siguientes patrones se utiliza para combinar objetos en una estructura de árbol y tratarlos de manera uniforme?",
+    "options": ["Composite", "Flyweight", "Proxy", "Builder"],
+    "answer": "Composite",
+    "example": "El patrón Composite se utiliza en sistemas como sistemas de archivos donde carpetas y archivos son tratados de manera uniforme."
+  },
+  {
+    "question": "El patrón **Decorator** se utiliza para:",
+    "options": [
+      "Agregar funcionalidades adicionales a un objeto sin modificar su clase",
+      "Ocultar la complejidad de una clase",
+      "Convertir una interfaz en otra",
+      "Construir objetos paso a paso"
+    ],
+    "answer": "Agregar funcionalidades adicionales a un objeto sin modificar su clase",
+    "example": "Usamos un Decorator cuando queremos añadir características a un objeto, como agregar la capacidad de loguear a un objeto de usuario."
+  },
+  {
+    "question": "¿Qué patrón se utiliza cuando necesitamos una interfaz simplificada para un conjunto de interfaces más complejas?",
+    "options": ["Facade", "Adapter", "Composite", "Flyweight"],
+    "answer": "Facade",
+    "example": "El patrón Facade es útil cuando queremos simplificar un sistema complicado, como la integración de diferentes módulos de un sistema bancario en una única interfaz."
+  },
+  {
+    "question": "En el patrón **Flyweight**, ¿qué se busca?",
+    "options": [
+      "Reducir el número de objetos creados",
+      "Agilizar la creación de objetos complejos",
+      "Desacoplar la interfaz de la implementación",
+      "Crear instancias sin especificar su clase"
+    ],
+    "answer": "Reducir el número de objetos creados",
+    "example": "El patrón Flyweight es útil cuando tenemos una gran cantidad de objetos similares, como los caracteres en un texto donde compartimos información repetitiva."
+  },
+  {
+    "question": "En el patrón **Proxy**, ¿qué tipo de objeto actúa como intermediario?",
+    "options": [
+      "Un objeto que envuelve otro objeto",
+      "Un objeto que construye instancias",
+      "Un objeto que maneja la creación de objetos",
+      "Un objeto que controla el acceso a recursos"
+    ],
+    "answer": "Un objeto que envuelve otro objeto",
+    "example": "Usamos un Proxy para controlar el acceso a un objeto costoso, como cargar imágenes solo cuando son necesarias en una interfaz de usuario."
+  },
+  {
+    "question": "¿Cuál de los siguientes patrones es útil para crear una instancia única de una clase?",
+    "options": ["Singleton", "Factory", "Prototype", "Composite"],
+    "answer": "Singleton",
+    "example": "Un ejemplo típico del patrón Singleton es el manejo de una conexión a base de datos donde solo debe existir una instancia a lo largo de toda la aplicación."
+  },
+  {
+    "question": "En el patrón **Builder**, ¿qué se busca?",
+    "options": [
+      "Construir objetos paso a paso",
+      "Convertir una interfaz en otra",
+      "Desacoplar la abstracción de su implementación",
+      "Ocultar la complejidad interna"
+    ],
+    "answer": "Construir objetos paso a paso",
+    "example": "El patrón Builder es común en la creación de objetos complejos como un 'hamburguesa' donde se pueden seleccionar diferentes ingredientes (pan, carne, queso, etc.) sin tener que construir el objeto manualmente."
+  },
+  {
+    "question": "¿Cuál de los siguientes patrones de diseño es útil para garantizar que una clase tenga una sola instancia durante toda la aplicación?",
+    "options": ["Singleton", "Factory", "Prototype", "Proxy"],
+    "answer": "Singleton",
+    "example": "El patrón Singleton se utiliza, por ejemplo, en la implementación de una clase de gestión de configuración que debe mantener un único punto de acceso en la aplicación."
+  },
+  {
+    "question": "En el patrón **Composite**, ¿qué tipo de relación existe entre los objetos?",
+    "options": ["Composición", "Dependencia", "Herencia", "Polimorfismo"],
+    "answer": "Composición",
+    "example": "Un sistema de archivos es un ejemplo de Composite, donde tanto los archivos como las carpetas son tratados uniformemente como nodos en una estructura jerárquica."
+  },
+  {
+    "question": "¿Qué patrón de diseño se usa cuando se quiere evitar que una clase dependa de la clase exacta que utiliza?",
+    "options": ["Adapter", "Proxy", "Bridge", "Composite"],
+    "answer": "Adapter",
+    "example": "Un ejemplo es cuando integramos una librería de pago que tiene una API diferente a la de nuestra aplicación; usamos Adapter para que la interfaz sea compatible."
+  },
+  {
+    "question": "¿Cuál de los siguientes patrones se utiliza para crear objetos sin especificar la clase exacta de los mismos?",
+    "options": ["Prototype", "Factory", "Builder", "Singleton"],
+    "answer": "Factory",
+    "example": "El patrón Factory es utilizado en juegos cuando creamos diferentes tipos de enemigos sin tener que instanciar clases específicas de cada enemigo."
+  },
+  {
+    "question": "¿En qué patrón se usa un objeto sustituto para controlar el acceso a otro objeto?",
+    "options": ["Proxy", "Composite", "Facade", "Bridge"],
+    "answer": "Proxy",
+    "example": "Un ejemplo es el uso de Proxy en una red social donde controlamos el acceso a los detalles completos de un usuario sin exponer su información directamente."
+  },
+  {
+    "question": "En el patrón **Facade**, ¿qué se intenta lograr?",
+    "options": [
+      "Proporcionar una interfaz simplificada",
+      "Controlar la creación de objetos",
+      "Crear instancias de objetos similares",
+      "Aislar clases entre sí"
+    ],
+    "answer": "Proporcionar una interfaz simplificada",
+    "example": "El patrón Facade es utilizado en aplicaciones bancarias donde se proporciona una interfaz simple para realizar transacciones, aunque internamente se gestionan múltiples sistemas."
+  },
+  {
+    "question": "El patrón **Adapter** permite:",
+    "options": [
+      "Adaptar una interfaz existente a una nueva interfaz",
+      "Encapsular múltiples clases en una sola",
+      "Separar las clases según su funcionalidad",
+      "Crear objetos sin especificar su clase concreta"
+    ],
+    "answer": "Adaptar una interfaz existente a una nueva interfaz",
+    "example": "Un ejemplo clásico es adaptar una interfaz de pago de un servicio externo para que se ajuste a los métodos de pago de nuestra aplicación."
+  },
+  {
+    "question": "El patrón **Decorator** se utiliza para:",
+    "options": [
+      "Extender el comportamiento de un objeto sin modificar su clase",
+      "Proporcionar una interfaz para objetos complejos",
+      "Controlar el acceso a un objeto",
+      "Componer objetos complejos"
+    ],
+    "answer": "Extender el comportamiento de un objeto sin modificar su clase",
+    "example": "El patrón Decorator es usado para agregar funcionalidades como 'loggeado' o 'validación' a objetos existentes sin modificar su implementación."
+  },
+  {
+    "question": "¿Qué patrón se usa para agregar responsabilidades adicionales a un objeto dinámicamente?",
+    "options": ["Decorator", "Adapter", "Proxy", "Composite"],
+    "answer": "Decorator",
+    "example": "Un ejemplo es añadir funcionalidades como la compresión de datos o el cifrado a un objeto de tipo 'archivo' en una aplicación de gestión de archivos."
+  },
+  {
+    "question": "¿Cuál de los siguientes patrones se utiliza cuando se necesita compartir un objeto entre muchas instancias sin generar duplicados innecesarios?",
+    "options": ["Flyweight", "Singleton", "Proxy", "Adapter"],
+    "answer": "Flyweight",
+    "example": "El patrón Flyweight es útil en un juego para representar múltiples instancias de un enemigo sin duplicar objetos pesados, como sus imágenes."
+  },
+  {
+    "question": "¿En qué patrón se utiliza un objeto que representa una interfaz de alto nivel para interactuar con un conjunto de interfaces más complejas?",
+    "options": ["Facade", "Composite", "Adapter", "Decorator"],
+    "answer": "Facade",
+    "example": "El patrón Facade es útil cuando tenemos un sistema con múltiples APIs complejas y queremos simplificar su uso para el cliente."
+  },
+  {
+    "question": "En el patrón **Bridge**, ¿qué se busca desacoplar?",
+    "options": [
+      "La abstracción de su implementación",
+      "El comportamiento de las clases",
+      "Las interfaces entre objetos",
+      "El ciclo de vida de un objeto"
+    ],
+    "answer": "La abstracción de su implementación",
+    "example": "En un sistema de gráficos, podemos tener una abstracción de forma que se implementa de diferentes maneras (círculos, rectángulos) sin que el cliente conozca las clases concretas."
+  },
+  {
+    "question": "En el patrón **Proxy**, ¿qué se puede controlar?",
+    "options": [
+      "El acceso a un objeto real",
+      "La forma de construir objetos",
+      "La creación de instancias de clases",
+      "La implementación de una interfaz"
+    ],
+    "answer": "El acceso a un objeto real",
+    "example": "El patrón Proxy se utiliza cuando tenemos objetos costosos de crear o manipular, como imágenes o vídeos, y los cargamos solo cuando se necesitan."
+  }
+]
