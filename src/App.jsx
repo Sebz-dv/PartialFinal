@@ -93,6 +93,25 @@ export default function App() {
     }
   }
 
+  // Volver a pregunta anterior
+  const handlePrevious = () => {
+    if (current > 0) {
+      // Guardar la respuesta actual antes de cambiar de pregunta
+      if (selected !== null) {
+        const updatedAnswers = [...answers];
+        updatedAnswers[current] = selected;
+        setAnswers(updatedAnswers);
+      }
+      
+      // Retroceder a la pregunta anterior
+      const prevQuestionIndex = current - 1;
+      setCurrent(prevQuestionIndex);
+      
+      // Restaurar la selección previa si existe
+      setSelected(answers[prevQuestionIndex] || null);
+    }
+  }
+
   // Calcular correctas y nota
   const correctCount = answers.reduce(
     (acc, a, i) => (a === questions[i]?.answer ? acc + 1 : acc),
@@ -103,15 +122,55 @@ export default function App() {
   // Enviar email al finalizar
   useEffect(() => {
     if (step === 'result') {
+      // Crear un formato HTML legible para las respuestas
+      const createAnswersHTML = () => {
+        let htmlContent = '';
+        
+        questions.forEach((q, index) => {
+          const isCorrect = answers[index] === q.answer;
+          const userAnswer = answers[index] || "No contestada";
+          
+          htmlContent += `
+            <div style="margin-bottom: 20px; padding: 15px; background-color: ${isCorrect ? '#f0fff0' : '#fff0f0'}; border-radius: 8px; border-left: 5px solid ${isCorrect ? '#4CAF50' : '#F44336'};">
+              <p style="font-weight: bold; margin-bottom: 8px; color: #333;">${index + 1}. ${q.question}</p>
+              <p style="margin: 5px 0; color: #555;"><strong>Respuesta correcta:</strong> ${q.answer}</p>
+              <p style="margin: 5px 0; color: ${isCorrect ? '#4CAF50' : '#F44336'};"><strong>Tu respuesta:</strong> ${userAnswer}</p>
+              <p style="font-weight: bold; color: ${isCorrect ? '#4CAF50' : '#F44336'};">${isCorrect ? '✓ Correcta' : '✗ Incorrecta'}</p>
+            </div>
+          `;
+        });
+        
+        return htmlContent;
+      };
+      
+      // Configurar EmailJS
+      emailjs.init("aVyUPavS6v7EJWk_V");
+      
+      // Preparar datos para el correo
+      const templateParams = {
+        from_name: "frubiomo@uninpahu.edu.co",
+        to_name: "obarragan@uninpahu.edu.co", // Cambiado según el requerimiento
+        student_name: name,
+        student_email: email,
+        student_jornada: jornada,
+        score: score,
+        correct_count: correctCount,
+        total_questions: questions.length,
+        answers_detail: createAnswersHTML() // Enviar respuestas en formato HTML
+      };
+      
       emailjs
         .send(
-          'YOUR_SERVICE_ID',
-          'YOUR_TEMPLATE_ID',
-          { name, email, jornada, score, correctCount },
-          'YOUR_USER_ID'
+          "service_fja2r5u",
+          "template_nmjqtij",
+          templateParams
         )
-        .then(() => console.log('Correo enviado'))
-        .catch(e => console.error('Error enviando correo', e))
+        .then(() => {
+          console.log('Correo enviado exitosamente a obarragan@uninpahu.edu.co');
+        })
+        .catch(error => {
+          console.error('Error al enviar correo:', error);
+        });
     }
   }, [step])
 
@@ -223,7 +282,21 @@ export default function App() {
             ))}
           </div>
 
-          <div className="flex justify-end mt-4">
+          <div className="flex justify-between mt-4">
+            {/* Botón Atrás */}
+            <button
+              onClick={handlePrevious}
+              disabled={current === 0}
+              className={`px-6 py-2 rounded-lg transition-all shadow-md ${
+                current === 0
+                  ? 'bg-gray-400 text-gray-300 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-gray-600 hover:to-gray-700'
+              }`}
+            >
+              Atrás
+            </button>
+            
+            {/* Botón Siguiente/Finalizar */}
             <button
               onClick={handleNext}
               disabled={selected === null}
